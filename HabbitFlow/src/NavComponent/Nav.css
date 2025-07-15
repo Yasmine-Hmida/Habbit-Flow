@@ -1,0 +1,115 @@
+/* Styling of the Navbar */
+header{
+    display: none;
+}
+
+.navBar{
+    background-color: white;
+    padding:30px;
+    border: 0.1px solid #1b4965;
+    box-shadow: 3px 3px 1px gray;
+    position:sticky;
+    top:0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons{
+    display:flex;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    font-size: large;
+    color: black;
+}
+
+.logo{
+    color: #1b4965;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.buttons a{
+    margin-right: 10px;
+    background-color: #e9ecef;
+    padding:10px;
+    border:2px solid #1b4965;
+    border-radius: 10px;
+}
+
+.buttons a.login {
+    background-color: transparent;
+    border: none;
+}
+
+img{ /* Our close and bars Icons */
+    width:20px;
+    height:20px;
+    cursor:pointer;
+    display: none;
+    opacity:0;
+}
+
+/* Responsive Styling of the Navbar */
+@media screen and (max-width:1024px){ /* For Smartphones */
+    
+    header{
+        background-color: rgb(253, 253, 253);
+        padding:30px;
+        border: 0.1px solid #1b4965;
+        box-shadow: 3px 3px 1px gray;
+        position:sticky;
+        top:0;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navBar{
+        height:100%;
+        width:100%;
+        box-shadow: none;
+        
+        position:fixed;
+        top:0;
+        left:0;
+
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        transition:1s;
+        transform: translateY(-100vh); /* Make it invisible */
+    }
+
+    img{
+        display: block;
+        opacity:1;
+    }
+
+    .navBar #logoNormal{
+        display: none;
+    }
+
+    .navBar .buttons{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .responsiveNav{
+        transform: none; /* to Toggle the display of the Nav */
+    }
+
+    .closeIcon{
+        position:absolute;
+        top:2rem;
+        right:2rem;
+    }
+}
