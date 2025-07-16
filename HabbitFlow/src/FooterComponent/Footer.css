@@ -22,3 +22,12 @@ footer{
         font-size: medium;
     }
 }
+
+@media screen and (min-width:601px) and (max-width: 1023px){ /* For Tablets and Ipads*/
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
