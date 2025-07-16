@@ -5,6 +5,7 @@ import './App.css'
 import Nav from './NavComponent/Nav.jsx'
 import Welcome from './WelcomeComponent/Welcome.jsx'
 import Feature from './FeatureComponent/Feature.jsx'
+import Footer from './FooterComponent/Footer.jsx'
 
 // Importing Images
 import doneIcon from './assets/done.png';
@@ -52,6 +53,7 @@ const App = () => {
                     ))
                 }
             </div>
+            <Footer/>
         </>
     )
 }
