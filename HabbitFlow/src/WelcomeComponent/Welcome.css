@@ -6,8 +6,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
 }
 
 .welcome *{

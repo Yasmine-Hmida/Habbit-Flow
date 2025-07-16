@@ -46,7 +46,7 @@ a{
     border: none;
 }
 
-img{ /* Our close and bars Icons */
+.navIcons{ /* Our close and bars Icons */
     width:20px;
     height:20px;
     cursor:pointer;
@@ -77,6 +77,7 @@ img{ /* Our close and bars Icons */
         position:fixed;
         top:0;
         left:0;
+        z-index: 2;
 
         display:flex;
         flex-direction: column;
@@ -88,7 +89,7 @@ img{ /* Our close and bars Icons */
         transform: translateY(-100vh); /* Make it invisible */
     }
 
-    img{
+    .navIcons{
         display: block;
         opacity:1;
     }

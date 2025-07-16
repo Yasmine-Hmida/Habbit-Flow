@@ -1,0 +1,51 @@
+/* Styling the Feature Component */
+
+.feature{
+    background-color: #fff;
+    padding: 30px;
+    margin:10px;
+    height:300px;
+    border: 1px solid #1b4965;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px gray;
+
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feature *{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.featureIcon{
+    width:40px;
+    height:40px;
+}
+
+.featureTitle{
+    font-size: 25px;
+    font-weight: 600;
+    color:#1b4965;
+}
+
+.featureDesc{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Responsive Styling */
+@media screen and (max-width:600px){
+    .feature{
+        width:100%;
+    }
+}
+
+@media screen and (min-width:700px) and (max-width:900px){
+    .feature{
+        height:fit-content;
+    }
+}

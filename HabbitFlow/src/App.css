@@ -1,0 +1,18 @@
+/* Styling the App Component */
+
+.features{
+    padding:40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Styling */
+@media screen and (max-width:600px){
+    .features{
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-right: 15px;
+    }
+}
