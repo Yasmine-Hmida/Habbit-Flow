@@ -3,6 +3,7 @@ import Home from './Pages/Home.jsx';
 import Login from './Pages/Login.jsx';
 import SignUp from './Pages/SignUp.jsx';
 import Habbits from './Pages/Habbits.jsx';
+import NotFound from './NotFoundComponent/NotFound.jsx';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Habbits" element={<Habbits />} />
+        <Route path='*' element={<NotFound/>}/>
     </Routes>
   );
 };

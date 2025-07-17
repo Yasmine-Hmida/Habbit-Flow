@@ -20,7 +20,7 @@ header{
     justify-content: space-between;
 }
 
-a{
+.navLink{
     text-decoration: none;
     text-align: center;
     font-size: large;
@@ -33,7 +33,7 @@ a{
     font-weight: bolder;
 }
 
-.buttons a{
+.buttons .navLink{
     margin-right: 10px;
     background-color: #e9ecef;
     padding:10px;
@@ -41,7 +41,7 @@ a{
     border-radius: 10px;
 }
 
-.buttons a.login {
+.buttons .navLink.login {
     background-color: transparent;
     border: none;
 }
