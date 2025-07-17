@@ -9,7 +9,7 @@ import doneIcon from '../assets/done.png';
 import fireIcon from '../assets/fire.png';
 import riseIcon from '../assets/rise.png';
 
-import '../App.css'
+import './Home.css'
 
 const Home = () => {
     const features = [
