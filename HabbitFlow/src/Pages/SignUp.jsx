@@ -1,12 +1,13 @@
-import Nav from '../NavComponent/Nav.jsx'
+import SignUpForm from '../SignUpComponent/SignUpForm.jsx'
+import './Register.css'
 
 const SignUp = () => {
-  return (
-    <div>
-      <Nav />
-      <h1>Sign Up Page</h1>
-    </div>
-  )
+  
+    return (
+        <div className='signUpContainer'>  
+            <SignUpForm/>
+        </div>      
+    )
 }
 
 export default SignUp
