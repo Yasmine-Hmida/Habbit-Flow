@@ -1,8 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 
-import view from '../assets/view.png'
-// import hide from '../assets/hide.png'
-
 import useFormAuth from '../Hooks/useFormAuth' // Import the Custom Hook
 
 const LoginForm = () => {
@@ -12,8 +9,11 @@ const LoginForm = () => {
         username,
         email,
         password,
+        icon,
+        passwordType,
 
         submitMessage,
+        changeImage,
 
         handleUsernameChange,
         handleEmailChange,
@@ -21,6 +21,7 @@ const LoginForm = () => {
         handleLoginSubmit   
              
     } = useFormAuth();
+
 
     return (
         <>
@@ -37,8 +38,8 @@ const LoginForm = () => {
                 </div>
 
                 <div className="passwordContainer">
-                    <input type="password" name="password" value={password} className='registerInput' id="password" placeholder='Password' onChange={handlePasswordChange}/>
-                    <img className='registerIcon viewIcon' src={view} alt="eyeView Icon"/>
+                    <input type={passwordType} name="password" value={password} className='registerInput' id="password" placeholder='Password' onChange={handlePasswordChange}/>
+                    <img className='registerIcon viewIcon' src={icon} alt="eyeView Icon" onClick={changeImage} data-id="1"/>
                 </div>
 
                 <button type="submit" className='submitBtn'>Login</button> 

@@ -1,8 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 
-import view from '../assets/view.png'
-// import hide from '../assets/hide.png'
-
 import useFormAuth from '../Hooks/useFormAuth' // Import the Custom Hook
 
 const SignUpForm = () => {
@@ -13,12 +10,17 @@ const SignUpForm = () => {
         email,
         password,
         password2,
+        icon,
+        icon2,
+        passwordType,
+        passwordType2,
 
         usernameError,
         emailError,
         passwordError,
         password2Error,
 
+        changeImage,
         handleUsernameChange,
         handleEmailChange,
         handlePasswordChange,
@@ -43,14 +45,14 @@ const SignUpForm = () => {
                 </div>
 
                 <div className="passwordContainer">
-                    <input type="password" name="password" value={password} className='registerInput' id="password" placeholder='Password' onChange={handlePasswordChange}/>
-                    <img className='registerIcon viewIcon' src={view} alt="eyeView Icon"/>
+                    <input type={passwordType} name="password" value={password} className='registerInput' id="password" placeholder='Password' onChange={handlePasswordChange}/>
+                    <img className='registerIcon viewIcon' src={icon} alt="eyeView Icon" onClick={changeImage} data-id="1"/>
                     <p className="passwordMessage">{passwordError}</p>
                 </div>
 
                 <div className="passwordContainer">
-                    <input type="password" name="password2" value={password2} className='registerInput' id="password2" placeholder='Re-Password' onChange={handlePassword2Change}/>
-                    <img className='registerIcon viewIcon' src={view} alt="eyeView Icon"/>
+                    <input type={passwordType2} name="password2" value={password2} className='registerInput' id="password2" placeholder='Re-Password' onChange={handlePassword2Change}/>
+                    <img className='registerIcon viewIcon' src={icon2} alt="eyeView Icon" onClick={changeImage} data-id="2"/>
                     <p className="rePasswordMessage">{password2Error}</p>
                 </div>
 

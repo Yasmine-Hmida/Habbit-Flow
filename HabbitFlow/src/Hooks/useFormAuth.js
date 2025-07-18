@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import view from '../assets/view.png'
+import hide from '../assets/hide.png'
+
 const useFormAuth = () => {
     const navigate = useNavigate(); /* For Redirections */
 
@@ -32,6 +35,37 @@ const useFormAuth = () => {
     const handleEmailChange = (e) => setEmail(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
     const handlePassword2Change = (e) => setPassword2(e.target.value);
+
+    // Eye Icons and Password Types
+    const [icon , setIcon] = useState(view)
+    const [passwordType , setPasswordType] = useState("password")
+    const [icon2 , setIcon2] = useState(view)
+    const [passwordType2 , setPasswordType2] = useState("password")
+
+    const changeImage = (e) => {
+        const field = e.target.dataset.id;
+
+        if (field === "1"){
+            if(icon == view){
+                setIcon(hide)
+                setPasswordType("text")
+            }
+            else{
+                setIcon(view)
+                setPasswordType("password")
+            }
+        }
+        else{
+            if(icon2 == view){
+                setIcon2(hide)
+                setPasswordType2("text")
+            }
+            else{
+                setIcon2(view)
+                setPasswordType2("password")
+            }
+        }
+    }
 
     // Submit handler SignUp
     const handleSignUpSubmit = (e) => {
@@ -102,12 +136,18 @@ const useFormAuth = () => {
         }
     };
 
+
+
     return {
         // Values
         username,
         email,
         password,
         password2,
+        icon,
+        icon2,
+        passwordType,
+        passwordType2,
 
         // Errors
         usernameError,
@@ -117,6 +157,7 @@ const useFormAuth = () => {
         submitMessage,
 
         // Handlers
+        changeImage,
         handleUsernameChange,
         handleEmailChange,
         handlePasswordChange,
