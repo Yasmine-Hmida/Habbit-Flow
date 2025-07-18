@@ -36,6 +36,11 @@
     gap:15px;
 }
 
+.registerForm p{
+    color: rgb(156, 42, 42);
+    font-weight: 600;
+}
+
 .registerTitle{
     text-align: center;
     font-size: 30px;
