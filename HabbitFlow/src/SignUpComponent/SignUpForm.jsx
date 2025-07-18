@@ -14,6 +14,7 @@ const SignUpForm = () => {
         icon2,
         passwordType,
         passwordType2,
+        submitMessage,
 
         usernameError,
         emailError,
@@ -57,6 +58,7 @@ const SignUpForm = () => {
                 </div>
 
                 <button type="submit" className='submitBtn'>Sign Up</button> 
+                <p className="submitMessage">{submitMessage}</p>
 
                 <div className="goSignUpPage">
                     <h2 className='goMessage'>Already have an account?</h2>
