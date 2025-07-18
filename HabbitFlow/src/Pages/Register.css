@@ -1,8 +1,8 @@
-/* Styling the Login Page */
+/* Styling the Registration Pages */
 
 .loginContainer , .signUpContainer{
     position:absolute;
-    top:30%;
+    top:40%;
     left:50%;
     transform: translate(-50%, -50%);
 
@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:20px;
 }
 
 .goHomeBtn{
@@ -22,3 +23,93 @@
     border-radius: 10px;
 }
 
+.registerForm{
+    background-color: #fff;
+    width:100%;
+    padding:30px;
+    border: 2px solid #1b4965;
+    border-radius: 10px;
+    box-shadow: 0px 5px 2px gray;
+
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.registerTitle{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;   
+    color:#1b4965;
+}
+
+.registerInput{
+    height:35px;
+    width:100%;
+    padding:10px;
+    border: 1px solid #1b4965;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.passwordContainer{
+    position: relative;
+    width: 100%;
+}
+
+#password , #password2{
+  padding-right: 40px; 
+  width: 100%; 
+  height: 40px;
+  font-size: 16px;
+}
+
+.registerIcon{
+    width:20px;
+    height:20px;
+    cursor: pointer;
+
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.submitBtn{
+    padding:8px;
+    font-size: 20px;
+    font-weight: 600;
+    color:white;
+    cursor: pointer;
+    background-color: #1b4965;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.goSignUpPage{
+    display: flex;
+    justify-content: center;
+    gap:5px;
+}
+
+.goMessage{
+    font-size: small;
+    font-weight: 300;
+}
+
+.goRegister{
+    cursor: pointer;
+    font-size: small;
+    font-weight: 700;
+    color:#1b4965;
+    border: none;
+    background-color: #fff;
+}
+
+
+/* Responsive Styling */
+@media screen and (max-width:600px){
+    .loginContainer , .signUpContainer{
+        width:80%;
+    }
+}
