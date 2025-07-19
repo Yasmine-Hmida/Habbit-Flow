@@ -26,6 +26,7 @@ const useFormAuth = () => {
 
     // Validation functions
     const validateUsername = () => /.+/.test(username);
+    const validateNotMissingEmail = () => /.+/.test(email);
     const validateEmail = () => regexEmail.test(email);
     const validatePassword = () => regexPassword.test(password);
     const validatePassword2 = () => password === password2;
@@ -79,17 +80,22 @@ const useFormAuth = () => {
 
         // Validate inputs
         const isUsernameValid = validateUsername();
+        const isNotMissingEmail = validateNotMissingEmail();
         const isEmailValid = validateEmail();
         const isPasswordValid = validatePassword();
         const isPassword2Valid = validatePassword2();
 
         // Set errors
-        if (!isUsernameValid) setUsernameError('Empty Username Field');
-        if (!isEmailValid) setEmailError('Invalid Email');
+        if (!isUsernameValid) setUsernameError('Username Missing!');
+        if (!isNotMissingEmail) {
+            setEmailError('Email Missing!');
+        } else if (!isEmailValid) {
+            setEmailError('Invalid Email');
+        }
         if (!isPasswordValid) setPasswordError('Password must be at least 6 characters');
         if (!isPassword2Valid) setPassword2Error('Passwords do not match');
 
-        const formIsValid = isUsernameValid && isEmailValid && isPasswordValid && isPassword2Valid;
+        const formIsValid = isUsernameValid && isNotMissingEmail && isEmailValid && isPasswordValid && isPassword2Valid;
 
         if (formIsValid) {
             const existingUsers = JSON.parse(localStorage.getItem("users")) || []
@@ -119,24 +125,41 @@ const useFormAuth = () => {
     const handleLoginSubmit = (e) => {
         e.preventDefault();
 
-        let users = JSON.parse(localStorage.getItem("users")) || []
-        let currentUser = {username: username , email: email , password : password}
-        var isExistant = false;
+        // Reset Errors
+        setUsernameError('');
+        setEmailError('');
+        setPasswordError('');
+        setSubmitMessage('')  
 
-        for(let user of users){
-            if(user.username === currentUser.username && user.email === currentUser.email && user.password === currentUser.password){
-                isExistant = true;
-                navigate('/Habbits', { replace: true });
-                return;
+        // Validate inputs
+        const isUsernameValid = validateUsername();
+        const isNotMissingEmail = validateNotMissingEmail();
+        const isPasswordValid = validatePassword();
+
+        // Checking for missing fields
+        if (!isUsernameValid) setUsernameError('Username Missing!');
+        if (!isNotMissingEmail) setEmailError('Email Missing!');
+        if (!isPasswordValid) setPasswordError('Invalid Password!');
+        
+        const nothingMissing = isUsernameValid && isNotMissingEmail && isPasswordValid
+        if(nothingMissing){
+            let users = JSON.parse(localStorage.getItem("users")) || []
+            let currentUser = {username: username , email: email , password : password}
+            var isExistant = false;
+
+            for(let user of users){
+                if(user.username === currentUser.username && user.email === currentUser.email && user.password === currentUser.password){
+                    isExistant = true;
+                    navigate('/Habbits', { replace: true });
+                    return;
+                }
+            }
+
+            if(!isExistant){
+                setSubmitMessage("Inexistant User!")
             }
         }
-
-        if(!isExistant){
-            setSubmitMessage("Inexistant User!")
-        }
     };
-
-
 
     return {
         // Values
