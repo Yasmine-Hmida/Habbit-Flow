@@ -13,8 +13,8 @@ const LoginForm = () => {
         passwordType,
 
         submitMessage,
+        
         changeImage,
-
         handleUsernameChange,
         handleEmailChange,
         handlePasswordChange,

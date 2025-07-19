@@ -1,4 +1,4 @@
-import LoginForm from '../LoginFormComponent/LoginForm.jsx'
+import LoginForm from '../Components/LoginForm.jsx'
 import './Register.css'
 
 const Login = () => {

@@ -1,4 +1,4 @@
-import SignUpForm from '../SignUpComponent/SignUpForm.jsx'
+import SignUpForm from '../Components/SignUpForm.jsx'
 import './Register.css'
 
 const SignUp = () => {
