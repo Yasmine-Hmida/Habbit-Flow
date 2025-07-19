@@ -1,8 +1,8 @@
 // Importing Components
-import Nav from '../NavComponent/Nav.jsx';
-import Welcome from '../WelcomeComponent/Welcome.jsx';
-import Feature from '../FeatureComponent/Feature.jsx';
-import Footer from '../FooterComponent/Footer.jsx';
+import Nav from '../Components/Nav.jsx';
+import Welcome from '../Components/Welcome.jsx';
+import Feature from '../Components/Feature.jsx';
+import Footer from '../Components/Footer.jsx';
 
 // Importing Images
 import doneIcon from '../assets/done.png';

@@ -3,7 +3,7 @@ import Home from './Pages/Home.jsx';
 import Login from './Pages/Login.jsx';
 import SignUp from './Pages/SignUp.jsx';
 import Habbits from './Pages/Habbits.jsx';
-import NotFound from './NotFoundComponent/NotFound.jsx';
+import NotFound from './Components/NotFound.jsx';
 
 const App = () => {
   return (
