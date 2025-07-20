@@ -1,0 +1,30 @@
+/* Styling the Navbar in the Habbits Page */
+
+.navHabbits{
+    background-color: white;
+    padding:30px;
+    border: 0.1px solid #1b4965;
+    box-shadow: 3px 3px 1px gray;
+    position:sticky;
+    top:0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.logOutBtn{
+    background-color: #e9ecef;
+}
+
+.welcomeHabbits{
+    font-size: x-large;
+    font-weight: 400;
+}
+
+
+/* Responsive Styling */
+@media screen and (max-width:600px){
+    .welcomeHabbits{
+        font-size: 20px;
+    }
+}

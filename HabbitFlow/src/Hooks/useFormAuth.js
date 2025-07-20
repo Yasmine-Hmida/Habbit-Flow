@@ -159,7 +159,12 @@ const useFormAuth = () => {
             for(let user of users){
                 if(user.username === currentUser.username && user.email === currentUser.email && user.password === currentUser.password){
                     isExistant = true;
-                    navigate('/Habbits', { replace: true });
+
+                    navigate('/Habbits', {
+                        replace: true,
+                        state: { username: currentUser.username }
+                    });
+                    
                     return;
                 }
             }
