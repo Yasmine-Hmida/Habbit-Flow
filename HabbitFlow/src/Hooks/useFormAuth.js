@@ -28,6 +28,7 @@ const useFormAuth = () => {
     const validateUsername = () => /.+/.test(username);
     const validateNotMissingEmail = () => /.+/.test(email);
     const validateEmail = () => regexEmail.test(email);
+    const validateNotMissingPassword = () => /.+/.test(password)
     const validatePassword = () => regexPassword.test(password);
     const validatePassword2 = () => password === password2;
 
@@ -43,6 +44,7 @@ const useFormAuth = () => {
     const [icon2 , setIcon2] = useState(view)
     const [passwordType2 , setPasswordType2] = useState("password")
 
+    // Toggle Icons and Password Types Function
     const changeImage = (e) => {
         const field = e.target.dataset.id;
 
@@ -68,34 +70,53 @@ const useFormAuth = () => {
         }
     }
 
-    // Submit handler SignUp
-    const handleSignUpSubmit = (e) => {
-        e.preventDefault();
-
+    // Validation Function for both Login and Sign Up Function
+    const validateInputs = () => {
         // Reset errors
         setUsernameError('');
         setEmailError('');
         setPasswordError('');
-        setPassword2Error('');
 
         // Validate inputs
         const isUsernameValid = validateUsername();
         const isNotMissingEmail = validateNotMissingEmail();
         const isEmailValid = validateEmail();
+        const isNotMissingPassword = validateNotMissingPassword();
         const isPasswordValid = validatePassword();
-        const isPassword2Valid = validatePassword2();
-
+    
         // Set errors
         if (!isUsernameValid) setUsernameError('Username Missing!');
+
         if (!isNotMissingEmail) {
             setEmailError('Email Missing!');
         } else if (!isEmailValid) {
-            setEmailError('Invalid Email');
+            setEmailError('Invalid Email!');
         }
-        if (!isPasswordValid) setPasswordError('Password must be at least 6 characters');
+
+        if(!isNotMissingPassword){
+            setPasswordError("Password Missing!")
+        }
+        else if (!isPasswordValid) setPasswordError('Password must have 6 characters!');
+
+        return isUsernameValid && isNotMissingEmail && isEmailValid && isNotMissingPassword && isPasswordValid;
+    }
+
+    // Submit handler SignUp
+    const handleSignUpSubmit = (e) => {
+        e.preventDefault();
+
+        const commonFieldsValid = validateInputs();
+
+        // Reset errors
+        setPassword2Error('');
+
+        // Validate inputs
+        const isPassword2Valid = validatePassword2();
+
+        // Set errors
         if (!isPassword2Valid) setPassword2Error('Passwords do not match');
 
-        const formIsValid = isUsernameValid && isNotMissingEmail && isEmailValid && isPasswordValid && isPassword2Valid;
+        const formIsValid = commonFieldsValid && isPassword2Valid;
 
         if (formIsValid) {
             const existingUsers = JSON.parse(localStorage.getItem("users")) || []
@@ -117,7 +138,7 @@ const useFormAuth = () => {
             existingUsers.push(newUser)
             localStorage.setItem("users", JSON.stringify(existingUsers));
 
-            navigate('/', { replace: true });
+            navigate('/Login', { replace: true });
         }
     };
 
@@ -126,22 +147,10 @@ const useFormAuth = () => {
         e.preventDefault();
 
         // Reset Errors
-        setUsernameError('');
-        setEmailError('');
-        setPasswordError('');
         setSubmitMessage('')  
-
-        // Validate inputs
-        const isUsernameValid = validateUsername();
-        const isNotMissingEmail = validateNotMissingEmail();
-        const isPasswordValid = validatePassword();
-
-        // Checking for missing fields
-        if (!isUsernameValid) setUsernameError('Username Missing!');
-        if (!isNotMissingEmail) setEmailError('Email Missing!');
-        if (!isPasswordValid) setPasswordError('Invalid Password!');
         
-        const nothingMissing = isUsernameValid && isNotMissingEmail && isPasswordValid
+        const nothingMissing = validateInputs();
+
         if(nothingMissing){
             let users = JSON.parse(localStorage.getItem("users")) || []
             let currentUser = {username: username , email: email , password : password}

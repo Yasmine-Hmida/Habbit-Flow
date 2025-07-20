@@ -52,7 +52,7 @@ const SignUpForm = () => {
                 </div>
 
                 <div className="passwordContainer">
-                    <input type={passwordType2} name="password2" value={password2} className='registerInput' id="password2" placeholder='Re-Password' onChange={handlePassword2Change}/>
+                    <input type={passwordType2} name="password2" value={password2} className='registerInput' id="password2" placeholder='Confirm Password' onChange={handlePassword2Change}/>
                     <img className='registerIcon viewIcon' src={icon2} alt="eyeView Icon" onClick={changeImage} data-id="2"/>
                     <p className="rePasswordMessage">{password2Error}</p>
                 </div>
