@@ -1,0 +1,40 @@
+/* Styling the Habbit Component */
+
+.HabbitContainer{
+    background-color: #fff;
+    width:60%;
+    padding:20px;
+    border:1px solid #1b4965;
+    border-radius: 10px;
+    cursor:pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.HabbitContainer:hover{
+    background-color: #d7e0d7;
+}
+
+.habbitMessage{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.habbitDel{
+    width: 20px;
+    height:20px;
+}
+
+/* Responsive Styling */
+@media screen and (max-width:600px){
+    .HabbitContainer{
+        width:100%;
+    }
+
+    .habbitMessage{
+        font-size: 15px;
+        margin-right:5px;
+    }
+}
