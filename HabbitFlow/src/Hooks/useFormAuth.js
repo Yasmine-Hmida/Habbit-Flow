@@ -6,7 +6,7 @@ import hide from '../assets/hide.png'
 
 const useFormAuth = () => {
     const navigate = useNavigate(); /* For Redirections */
-
+ 
     // Regular expressions for validation
     const regexEmail = /.+@.+\..+/;
     const regexPassword = /.{6}/;
@@ -105,21 +105,23 @@ const useFormAuth = () => {
     const handleSignUpSubmit = (e) => {
         e.preventDefault();
 
+        // Validation of common Inputs
         const commonFieldsValid = validateInputs();
 
-        // Reset errors
+        // Reset the Password2Error Field 
         setPassword2Error('');
 
-        // Validate inputs
+        // Validate the password2
         const isPassword2Valid = validatePassword2();
 
-        // Set errors
+        // Set the password2 error
         if (!isPassword2Valid) setPassword2Error('Passwords do not match');
 
         const formIsValid = commonFieldsValid && isPassword2Valid;
 
         if (formIsValid) {
             const existingUsers = JSON.parse(localStorage.getItem("users")) || []
+
             const newUser = {
                 username: username,
                 email:email,
@@ -146,9 +148,10 @@ const useFormAuth = () => {
     const handleLoginSubmit = (e) => {
         e.preventDefault();
 
-        // Reset Errors
+        // Reset the final message error field
         setSubmitMessage('')  
         
+        // Validation for all fields
         const nothingMissing = validateInputs();
 
         if(nothingMissing){

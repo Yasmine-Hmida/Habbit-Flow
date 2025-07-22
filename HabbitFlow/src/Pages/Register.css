@@ -12,7 +12,7 @@
     align-items: center;
     gap:20px;
 }
-
+ 
 .goHomeBtn{
     font-size: large;
     font-weight: 400;
@@ -91,7 +91,7 @@
     border-radius: 5px;
 }
 
-.goSignUpPage{
+.goSignUpPage{  /* For redirections between pages */
     display: flex;
     justify-content: center;
     gap:5px;
@@ -110,7 +110,6 @@
     border: none;
     background-color: #fff;
 }
-
 
 /* Responsive Styling */
 @media screen and (max-width:600px){

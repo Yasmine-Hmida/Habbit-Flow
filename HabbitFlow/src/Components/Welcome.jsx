@@ -7,7 +7,7 @@ const Welcome = () => {
             <h1 className="welcomeHeading">Build Better and Consistent Habbits, One Day at a Time</h1>
             <p className="welcomeDesc">
                 Track your daily habits, build streaks, and transform your life <br/>with
-                Habbit Flow- your personal tracker that will help you achieve <br/>your goals efficiently
+                Habbit Flow - your personal tracker that will help you achieve <br/>your goals efficiently
             </p>
             <h2 className="welcomeEnd">Start Building Habbits Today!</h2>
         </div>  
@@ -15,3 +15,4 @@ const Welcome = () => {
 }
 
 export default Welcome
+ 

@@ -10,7 +10,7 @@ const AddHabbitInput = ({ onAdd }) => {
         }
     };
 
-    return (
+    return ( 
         <div className="habbitContainer">
             <div className="addHabbitContainer">
 

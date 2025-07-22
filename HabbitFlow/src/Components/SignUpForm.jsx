@@ -4,7 +4,7 @@ import useFormAuth from '../Hooks/useFormAuth' // Import the Custom Hook
 
 const SignUpForm = () => {
     const navigate = useNavigate();
-
+ 
     const {
         username,
         email,
@@ -36,23 +36,51 @@ const SignUpForm = () => {
                 <h1 className="registerTitle">Sign Up</h1>
 
                 <div className="usernameContainer">
-                    <input type="text" name="username" value={username} className='registerInput' id="username" placeholder='Username' onChange={handleUsernameChange}/>
+                    <input type="text" 
+                           name="username" 
+                           value={username} 
+                           className='registerInput' 
+                           id="username" 
+                           placeholder='Username' 
+                           onChange={handleUsernameChange}
+                    />
                     <p className="userNameMessage">{usernameError}</p>
                 </div>
                 
                 <div className="emailContainer">
-                    <input type="text" name="email" value={email} className='registerInput' id="email" placeholder='Email' onChange={handleEmailChange}/>
+                    <input type="text"
+                           name="email" 
+                           value={email} 
+                           className='registerInput' 
+                           id="email" 
+                           placeholder='Email' 
+                           onChange={handleEmailChange}
+                    />
                     <p className="emailMessage">{emailError}</p>
                 </div>
 
                 <div className="passwordContainer">
-                    <input type={passwordType} name="password" value={password} className='registerInput' id="password" placeholder='Password' onChange={handlePasswordChange}/>
+                    <input type={passwordType} 
+                           name="password" 
+                           value={password} 
+                           className='registerInput' 
+                           id="password" 
+                           placeholder='Password' 
+                           onChange={handlePasswordChange}
+                    />
                     <img className='registerIcon viewIcon' src={icon} alt="eyeView Icon" onClick={changeImage} data-id="1"/>
                     <p className="passwordMessage">{passwordError}</p>
                 </div>
 
                 <div className="passwordContainer">
-                    <input type={passwordType2} name="password2" value={password2} className='registerInput' id="password2" placeholder='Confirm Password' onChange={handlePassword2Change}/>
+                    <input type={passwordType2} 
+                           name="password2" 
+                           value={password2} 
+                           className='registerInput' 
+                           id="password2" 
+                           placeholder='Confirm Password' 
+                           onChange={handlePassword2Change}
+                    />
                     <img className='registerIcon viewIcon' src={icon2} alt="eyeView Icon" onClick={changeImage} data-id="2"/>
                     <p className="rePasswordMessage">{password2Error}</p>
                 </div>

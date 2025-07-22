@@ -1,5 +1,6 @@
 /* Styling the Habbits Page */
 
+/* Styling the Input field to add habbits */
 .habbitWrapper{
     display: flex;
     justify-content: center;
@@ -44,6 +45,7 @@
     background-color: #e9ecef;
 }
 
+/* Styling the container in which the habbits will be displayed */
 .habbitsBox{
     padding:30px;
 
@@ -52,7 +54,7 @@
     align-items: center;
     gap:20px;
 }
-
+ 
 .habbitCounter{
     font-size: 30px;
     font-weight: 500;
@@ -101,5 +103,10 @@
     .habbitsBox{
         padding: 10px;
         margin-top: 20px;
+    }
+
+    .noResult{
+        width:150px;
+        height:150px;
     }
 }

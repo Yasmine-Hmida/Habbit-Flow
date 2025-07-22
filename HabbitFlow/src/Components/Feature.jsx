@@ -9,5 +9,5 @@ const Feature = ({imgSrc , imgAlt ,title , description}) => {
         </div>
     )
 }
-
+ 
 export default Feature

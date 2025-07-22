@@ -11,7 +11,7 @@ const Nav = () => {
     const showNavTag = () => {
         navRef.current.classList.toggle("responsiveNav");
     }
-
+ 
     return (
         <>
             {/* This will appear in the Responsive Part */}

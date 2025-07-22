@@ -18,7 +18,7 @@ const Habbit = ({ habbitText, onDelete , id, isComplete , toggleCompleted}) => {
         <div className={`HabbitContainer ${selected ? 'selected' : ''}`}  onClick={handleClick}>
 
             <div className="habbit">
-                <img className='checkDoneIcon' src={isComplete?tick:notTick} alt="Done Icon"/>
+                <img className='checkDoneIcon' src={isComplete? tick:notTick} alt="Done Icon"/>
                 <h1 className="habbitMessage">{habbitText}</h1>
             </div>
 
@@ -26,8 +26,12 @@ const Habbit = ({ habbitText, onDelete , id, isComplete , toggleCompleted}) => {
                 src={bin} 
                 alt="Bin Icon" 
                 className='habbitDel' 
-                onClick={onDelete}
+                onClick={(e) => {
+                    e.stopPropagation(); 
+                    onDelete();
+                }}
             />
+
         </div>
     )
 }

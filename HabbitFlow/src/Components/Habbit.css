@@ -22,7 +22,7 @@
     width: 20px;
     height:20px;
 }
-
+ 
 .habbit{
     display: flex;
     gap:10px;
@@ -39,7 +39,7 @@
     }
 
     .habbitMessage{
-        font-size: 15px;
+        font-size:15px;
         margin-right:5px;
     }
 }
