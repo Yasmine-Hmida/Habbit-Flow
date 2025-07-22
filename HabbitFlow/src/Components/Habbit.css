@@ -13,18 +13,23 @@
     align-items: center;
 }
 
-.HabbitContainer:hover{
-    background-color: #e6ebe6;
-}
-
 .habbitMessage{
     font-weight: 400;
     font-size: 20px;
 }
 
-.habbitDel{
+.habbitDel,.checkDoneIcon{
     width: 20px;
     height:20px;
+}
+
+.habbit{
+    display: flex;
+    gap:10px;
+}
+
+.selected{
+    background-color: #e6ece6;
 }
 
 /* Responsive Styling */
