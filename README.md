@@ -33,7 +33,7 @@ It allows users to track their daily habits and routines in a visual and organiz
 To run the project locally:
 
 ```bash
-git clone https://github.com/your-username/HabbitFlow.git
+git clone https://github.com/Yasmine-Hmida/HabbitFlow.git
 cd HabbitFlow
 npm install
 npm start
