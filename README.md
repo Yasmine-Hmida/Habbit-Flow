@@ -36,4 +36,4 @@ To run the project locally:
 git clone https://github.com/Yasmine-Hmida/HabbitFlow.git
 cd HabbitFlow
 npm install
-npm start
+npm run dev
