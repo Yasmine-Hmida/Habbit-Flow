@@ -1,6 +1,6 @@
 # HabbitFlow
 
-**HabbitFlow** is a simple and elegant habit tracker built only with React.  
+**HabbitFlow** is a simple and elegant habit tracker built only with **React**.  
 It allows users to track their daily habits and routines in a visual and organized way.
 
 ---
@@ -39,8 +39,8 @@ git clone https://github.com/Yasmine-Hmida/HabbitFlow.git
 # Navigate into the project folder:
 cd HabbitFlow
 
-# Install Dependencies
+# Install Dependencies:
 npm install
 
-# Run the App
+# Run the App:
 npm run dev
