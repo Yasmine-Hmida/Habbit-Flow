@@ -1,11 +1,10 @@
 # HabbitFlow
 
-**HabbitFlow** is a simple and elegant habit tracker built only with **React**.  
-It allows users to track their daily habits and routines in a visual and organized way.
+**HabbitFlow** is a simple and elegant habit tracker built only with **React**. It allows users to track their daily habits and routines in a visual and organized way.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Add new habits.
 - Delete existing habits.
@@ -19,7 +18,7 @@ It allows users to track their daily habits and routines in a visual and organiz
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 <img width="1000" height="800" alt="Screenshot (417)" src="https://github.com/user-attachments/assets/9ab0e895-eba0-4cb4-afb0-3b38f25cb26c" />
 <img width="1000" height="800" alt="Screenshot (418)" src="https://github.com/user-attachments/assets/432354ea-d172-444c-8cb8-7204ed068efd" />
@@ -28,7 +27,7 @@ It allows users to track their daily habits and routines in a visual and organiz
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 To run the project locally:
 
